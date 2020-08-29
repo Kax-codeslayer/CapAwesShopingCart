@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import data from './data.json';
+import Products from './components/Products';
 
 
 class App extends Component {
@@ -19,7 +20,9 @@ class App extends Component {
         <header><a href="#">CapAwes</a></header>
         <main>
           <div className="content">
-            <div className="main">products</div>          
+            <div className="main">
+              <Products products={this.state.products}></Products>
+              </div>          
             <div className="sidebar">
               Cart
             </div>
