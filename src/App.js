@@ -14,11 +14,31 @@ class App extends Component {
       sort:""
     }
   }
-  sortProducts(event){
-    console.log(event.target.value);
+  sortProducts = (event) => { 
+    const sort = event.target.value;
+    this.setState((state) => ({
+      sort: sort,
+      products: this.state.products.slice().sort((a,b) => (
+        sort==="Lowest"?
+        ((a.price > b.price)? 1: -1):
+        sort === "Highest"?
+        ((a.price < b.price)? 1: -1):
+        ((a._id < b._id)? 1: -1)
+      ))
+    }))
   }
-  filterProducts(event){
-    console.log(event.target.value);
+  filterProducts = (event) => {
+    if(event.target.value ===""){
+      this.setState({size: event.target.value, product: data.products});
+    }
+    else{
+      this.setState({
+        size: event.target.value,
+        products: data.products.filter(
+          (product) => product.availableSizes.indexOf(event.target.value) >= 0
+        ),
+      });
+    }
   }
 
   render(){
