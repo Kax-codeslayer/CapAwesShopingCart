@@ -155,5 +155,40 @@ flex-wrap: wrap;
   flex: 1;
 }
 .right{
+  display: flex;
   text-align: right;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.total > div{
+  font-size: 2rem;
+}
+.total > div,
+.total > button{
+  flex: 1;
+}
+/* the checkout  form*/
+.form{
+  width: 100%;
+}
+.form-container{
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+}
+.form-container li{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+input {
+  padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
 }
